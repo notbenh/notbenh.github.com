@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>notbenh yaks about stuff on the internet</title>
+  <title>learns you a version control? - notbenh yaks about stuff on the internet</title>
   <meta name="author" content="notbenh (aka ben hengst)">
 
   
-  <meta name="description" content="Hello world, I am testing @jhelwigs fantasistic code in this horrable editor thinggie&#8230;. keep your pants on n-such.
-">
+  <meta name="description" content="Version control sounds like a big complex topic, and to some degree it is. Though like most things in software I&#8217;m sure you already have a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://notbenh.github.com/">
+  <link rel="canonical" href="http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,51 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version/">You Are Reading the Lets All Try This Again Version</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-25T16:59:00-07:00" pubdate data-updated="true">Oct 25<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Hello world, I am testing @jhelwigs fantasistic code in this horrable editor thinggie&#8230;. keep your pants on n-such.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/02/learns-you-a-version-control/">Learns You a Version Control?</a></h1>
+      <h1 class="entry-title">Learns You a Version Control?</h1>
     
     
       <p class="meta">
@@ -130,7 +90,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Version control sounds like a big complex topic, and to some degree it is. Though like most things in software I&#8217;m sure you already have a great understanding of what version control does. So let&#8217;s put on our &#8220;hats of pretend time&#8221; and start off with a little story:</p>
+<div class="entry-content"><p>Version control sounds like a big complex topic, and to some degree it is. Though like most things in software I&#8217;m sure you already have a great understanding of what version control does. So let&#8217;s put on our &#8220;hats of pretend time&#8221; and start off with a little story:</p>
 
 <blockquote><p>I have an important paper that I am writing. Things are going great: only 3 more pages to go. Ooop, I just deleted that last paragraph but I didn&#8217;t want to do that. Click &#8216;undo&#8217; and ~whew~ , it&#8217;s back.</p></blockquote>
 
@@ -160,22 +120,16 @@
 
 <p>Version control is just a system that allows you to keep the history of something. In this example it was my paper, but it can be anything. The version control system will have a way that I can keep this history in order and allow for me to look back in time and see how things grew. This system allows me to play without fear of losing anything. I can experiment and see how it works out. If I like it, I keep it. If it was a complete failure, so what? I just roll back to something that was working. Version control allows me to collaborate with others and reduce the frustration because every change is ideally tracked on it&#8217;s own. Version control allows me to play safely and not care about the consequences.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/15/rant-fuck-you-octopress/">RANT: FUCK YOU OCTOPRESS</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">notbenh (aka ben hengst)</span></span>
+
+      
 
 
 
@@ -187,49 +141,46 @@
   
 
 
-<time datetime="2012-03-15T18:46:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2012</time>
-        
-      </p>
+<time datetime="2012-08-02T22:54:00-07:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/learning/'>learning</a>, <a class='category' href='/blog/categories/programing/'>programing</a>, <a class='category' href='/blog/categories/version-control/'>version control</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>WTF: Why do developers of software hate there users so much that they activly decide to make the simple and expected things hard when they should be easy! For example user.github.com gh-pages expect to deploy to master, and I&#8217;m sure that just about every other self hosted thing will expect that master is the production branch&#8230; So it seems that Octopress, the blogging package for &#8220;Hackers&#8221; would follow suit? ~GASP~ they don&#8217;t, they have this sources branch, THAT THEY DON&#8217;T CREATE FOR YOU, that you have to read thru the Rakefile to even figure out WTF is going on?!?</p>
-
-<p>So thanks to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> that got sorted by renaming master to source and then the rake magic seems to build master under the hood. I don&#8217;t even understand why this was a good idea, other then master now only has the generated code and not everything else. If the point was to &#8220;hide passwords&#8221; then you can simply just add the config files to the ignore file. Unless I&#8217;m completely miss the obvious it seems like we are inventing a new workflow just for the fun of it.</p>
-
-<p>With the core of things up and apparently running&#8230; we now get to creat a post:</p>
-
-<pre><code>&gt; rake new\_post["silly name for a post"] 
-Creating new post: source/_posts/2012-03-15-silly-name-for-post.markdown
-</code></pre>
-
-<p>~sigh~ really last time I checked most unix tools only complain on error, so building a script that&#8217;s telling me that it&#8217;s going to think about something is completely pointless. Further more what my expectation was is that I wanted to create a new post, with your blog softwarez, as in I want to type&#8230; thus why are you now expecting me to COPY that file name and then tell vim (currently set as $EDITOR bu the way) to fucking edit that file. I&#8217;m guessing that it would be all of what 1 possibly 2 lines to make that a system call in the rake file. So again why not make this simple for the user? Oh that&#8217;s right this is a tool kit for hackers so we expect that all the users of this toolkit have the ablilty to solve this problem for us so we don&#8217;t need to care about them. =(</p>
-
-<p>Problems are designed for fixing, so lets first take care of that <strong>HORRABLE</strong> fuck rake and it&#8217;s silly pass me prams like nothing else. As a perl dev let&#8217;s make this simple by making a &#8217;<a href="https://github.com/notbenh/notbenh.github.com/blob/source/new">new</a>&#8217; script. Now all I have to say is :</p>
-
-<pre><code>&gt; new post another silly post
-Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
-</code></pre>
-
-<p>That&#8217;s progress, so now can we tell rake to just do what I wanted and not tell me that it was able to create a file, OH LOOK, the rake file says that it wrote the file before it writes the file&#8230; FAIL. Lets <a href="https://github.com/notbenh/octopress/commit/61701815ed97d2509264f4d00b9d2536d4d70cde">fix that up</a>&#8230; so that&#8217;s done. Now lets have the Rakefile actually DO something usefull for me by having it kick start this file with my <a href="https://github.com/notbenh/octopress/commit/c5c1e3ff88451efafd7d37a35e97206935aeccb2">$EDITOR</a>.</p>
-
-<p>There&#8230; now I have a system that&#8217;s WAY more user freindly&#8230; and it only took what an hour&#8230; and I&#8217;m not a ruby dev. Thanks again to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> for talking me off the ledge and letting me know that most of this could be worse.</p>
-
-<p>&#8211; notbenh~</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control/" data-via="notbenh" data-counturl="http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/15/rant-fuck-you-octopress/" title="Previous Post: RANT: FUCK YOU OCTOPRESS">&laquo; RANT: FUCK YOU OCTOPRESS</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version/" title="Next Post: you are reading the lets all try this again version">you are reading the lets all try this again version &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -254,7 +205,7 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/notbenh">@notbenh</a> on GitHub
@@ -284,7 +235,7 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -304,6 +255,7 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -318,7 +270,10 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
       var disqus_shortname = 'notbenh';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control/';
+        var disqus_url = 'http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

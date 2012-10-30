@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: testing, | notbenh yaks about stuff on the internet]]></title>
+  <link href="http://notbenh.github.com/blog/categories/testing-/atom.xml" rel="self"/>
+  <link href="http://notbenh.github.com/"/>
+  <updated>2012-10-29T23:35:41-07:00</updated>
+  <id>http://notbenh.github.com/</id>
+  <author>
+    <name><![CDATA[notbenh (aka ben hengst)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[you are reading the lets all try this again version]]></title>
+    <link href="http://notbenh.github.com/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version/"/>
+    <updated>2012-10-25T16:59:00-07:00</updated>
+    <id>http://notbenh.github.com/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version</id>
+    <content type="html"><![CDATA[<p>Hello world, I am testing @jhelwigs fantasistic code in this horrable editor thinggie.... keep your pants on n-such.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,16 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[notbenh yaks about stuff on the internet]]></title>
   <link href="http://notbenh.github.com/atom.xml" rel="self"/>
   <link href="http://notbenh.github.com/"/>
-  <updated>2012-10-25T16:56:38-07:00</updated>
+  <updated>2012-10-29T23:35:41-07:00</updated>
   <id>http://notbenh.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[notbenh (aka ben hengst)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[you are reading the lets all try this again version]]></title>
+    <link href="http://notbenh.github.com/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version/"/>
+    <updated>2012-10-25T16:59:00-07:00</updated>
+    <id>http://notbenh.github.com/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version</id>
+    <content type="html"><![CDATA[<p>Hello world, I am testing @jhelwigs fantasistic code in this horrable editor thinggie&#8230;. keep your pants on n-such.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[learns you a version control?]]></title>
+    <link href="http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control/"/>
+    <updated>2012-08-02T22:54:00-07:00</updated>
+    <id>http://notbenh.github.com/blog/2012/08/02/learns-you-a-version-control</id>
+    <content type="html"><![CDATA[<p>Version control sounds like a big complex topic, and to some degree it is. Though like most things in software I&#8217;m sure you already have a great understanding of what version control does. So let&#8217;s put on our &#8220;hats of pretend time&#8221; and start off with a little story:</p>
+
+<blockquote><p>I have an important paper that I am writing. Things are going great: only 3 more pages to go. Ooop, I just deleted that last paragraph but I didn&#8217;t want to do that. Click &#8216;undo&#8217; and ~whew~ , it&#8217;s back.</p></blockquote>
+
+<p><strong>Tada!</strong>&#8217; I just used version control. Undo works in this case by remembering what I did (delete). Because it stored a little bit of history on my paper it can then &#8216;undo&#8217; that action to get me back to a previous state of my paper (before the delete). The problem with undo is that it is the most simple version control: in most cases it only remembers one thing.</p>
+
+<blockquote><p>Well that doesn&#8217;t seem like a good thing. What if I wanted to see what my paper looked like yesterday? So how do I get around the history limitation? I can save my own history! For example, after every paragraph I write I save off another version of the file&#8211;paper_1.txt for the first one, paper_2.txt for the next and so on&#8211;so that even if I completely deleted everything I would still have a back up and only lose the paragraph that I was working on.</p></blockquote>
+
+<p>Now that I have started to build a system I have the ability to save my history. No longer do I have to worry about closing my paper and losing the undo history; it&#8217;s all saved elsewhere. I have a way to know what version came before and what came after. I can look back and see how my paper grew as I worked on it. All of these things are now possible because I have access to the history. And really that is all a version control system is: a way to access the history these files. It allows for all sorts of interesting things to all of a sudden become possible because you no longer have to focus on making everything perfect. Having version control is a net that allows you to safely experiment and always have a safe place to land if things go badly.</p>
+
+<blockquote><p>Lets take this story a bit further. Let&#8217;s say that I really didn&#8217;t do my research and I soon realize that my entire premiss is wrong. The good news is that I only have to edit a few paragraphs but they are all over the place and it could get really messy. I have some really good stuff in here and I want to make sure that I can look back at this version, but how am I going to remember that this is the version of my paper right before I changed direction? <strong>Ohh!</strong> I can save a copy of my paper and call it paper_wrong_premiss.txt and that way I can refer back to it at some later point.</p></blockquote>
+
+<p>Again, this is a version control concept, it is often called a &#8216;tag&#8217;. All we&#8217;ve really done is create a version, though this time we gave it a descriptive name rather then a forgettable number. Now as a human I no longer need to remember was it paper_26.txt or paper_29.txt that I made the change.</p>
+
+<blockquote><p>And now for something completely different! I&#8217;m finding that my paper is kinda dry and boring. It would be way more interesting if I changed the format to be more like a play. This way I can make it a conversation, I can add humor, I can make it interesting. But this is a big drastic change to my paper. Is there a way I could create a new version that I could work from so that I could try out the conversation idea but if I don&#8217;t like it I could later just throw only that part away? There sure is! I could make a copy of my paper and call it paper_play_1.txt.</p></blockquote>
+
+<p>As I&#8217;m sure you guessed by now most version control systems have a way to do this too, it&#8217;s often called a branch. You can almost think of it like a tag but in reverse. A tag explains what <em>has</em> happened whereas a branch is a way to explain what is <em>about to</em> happen.</p>
+
+<blockquote><p>So that was fun. I have a much better paper in the conversation format, but in the new format I could never really get page 1 worked out any better than the old boring page 1. So I&#8217;ll just leave the conversation paper as page 2 and beyond. I&#8217;ll copy in the boring page 1 and save that of as my paper_32.txt (or what ever the next number is) as I want this to now be the main version of the paper that I work from.</p></blockquote>
+
+<p>In version control speak this is known as a merge, it&#8217;s a way for you to collapse the work from one branch on to another branch. In this case I collapsed the work that I did from paper_play onto the main paper branch.</p>
+
+<blockquote><p>There. I think that the paper is good enough, but it always helps to have some one else look it over. I want to have <strong>you</strong> read my paper, I want you to be able to make some changes and I want to know what changes you made. I can save this off as paper_to_be_reviewed.txt and email it to you.</p></blockquote>
+
+<p>This is where version control gets really fun, distribution and sharing. Effectively, what I did here is I created a branch for you to play in. You can make any changes you want and they don&#8217;t get in my way. Conceivably I could continue to work on my main paper branch if I wanted to and you can work on the to_be_reviewed version. Later we can merge our changes, or if I really wanted to get picky I could only take part of your changes. It really doesn&#8217;t matter because they both have their own little tracks of history.</p>
+
+<h2>Ok story time over. Let&#8217;s review</h2>
+
+<p>Version control is just a system that allows you to keep the history of something. In this example it was my paper, but it can be anything. The version control system will have a way that I can keep this history in order and allow for me to look back in time and see how things grew. This system allows me to play without fear of losing anything. I can experiment and see how it works out. If I like it, I keep it. If it was a complete failure, so what? I just roll back to something that was working. Version control allows me to collaborate with others and reduce the frustration because every change is ideally tracked on it&#8217;s own. Version control allows me to play safely and not care about the consequences.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RANT: FUCK YOU OCTOPRESS]]></title>
+    <link href="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/"/>
+    <updated>2012-03-15T18:46:00-07:00</updated>
+    <id>http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress</id>
+    <content type="html"><![CDATA[<p>WTF: Why do developers of software hate there users so much that they activly decide to make the simple and expected things hard when they should be easy! For example user.github.com gh-pages expect to deploy to master, and I&#8217;m sure that just about every other self hosted thing will expect that master is the production branch&#8230; So it seems that Octopress, the blogging package for &#8220;Hackers&#8221; would follow suit? ~GASP~ they don&#8217;t, they have this sources branch, THAT THEY DON&#8217;T CREATE FOR YOU, that you have to read thru the Rakefile to even figure out WTF is going on?!?</p>
+
+<p>So thanks to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> that got sorted by renaming master to source and then the rake magic seems to build master under the hood. I don&#8217;t even understand why this was a good idea, other then master now only has the generated code and not everything else. If the point was to &#8220;hide passwords&#8221; then you can simply just add the config files to the ignore file. Unless I&#8217;m completely miss the obvious it seems like we are inventing a new workflow just for the fun of it.</p>
+
+<p>With the core of things up and apparently running&#8230; we now get to creat a post:</p>
+
+<pre><code>&gt; rake new\_post["silly name for a post"] 
+Creating new post: source/_posts/2012-03-15-silly-name-for-post.markdown
+</code></pre>
+
+<p>~sigh~ really last time I checked most unix tools only complain on error, so building a script that&#8217;s telling me that it&#8217;s going to think about something is completely pointless. Further more what my expectation was is that I wanted to create a new post, with your blog softwarez, as in I want to type&#8230; thus why are you now expecting me to COPY that file name and then tell vim (currently set as $EDITOR bu the way) to fucking edit that file. I&#8217;m guessing that it would be all of what 1 possibly 2 lines to make that a system call in the rake file. So again why not make this simple for the user? Oh that&#8217;s right this is a tool kit for hackers so we expect that all the users of this toolkit have the ablilty to solve this problem for us so we don&#8217;t need to care about them. =(</p>
+
+<p>Problems are designed for fixing, so lets first take care of that <strong>HORRABLE</strong> fuck rake and it&#8217;s silly pass me prams like nothing else. As a perl dev let&#8217;s make this simple by making a &#8217;<a href="https://github.com/notbenh/notbenh.github.com/blob/source/new">new</a>&#8217; script. Now all I have to say is :</p>
+
+<pre><code>&gt; new post another silly post
+Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
+</code></pre>
+
+<p>That&#8217;s progress, so now can we tell rake to just do what I wanted and not tell me that it was able to create a file, OH LOOK, the rake file says that it wrote the file before it writes the file&#8230; FAIL. Lets <a href="https://github.com/notbenh/octopress/commit/61701815ed97d2509264f4d00b9d2536d4d70cde">fix that up</a>&#8230; so that&#8217;s done. Now lets have the Rakefile actually DO something usefull for me by having it kick start this file with my <a href="https://github.com/notbenh/octopress/commit/c5c1e3ff88451efafd7d37a35e97206935aeccb2">$EDITOR</a>.</p>
+
+<p>There&#8230; now I have a system that&#8217;s WAY more user freindly&#8230; and it only took what an hour&#8230; and I&#8217;m not a ruby dev. Thanks again to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> for talking me off the ledge and letting me know that most of this could be worse.</p>
+
+<p>&#8211; notbenh~</p>
+]]></content>
+  </entry>
   
 </feed>

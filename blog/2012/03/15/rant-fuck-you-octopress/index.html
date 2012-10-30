@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>RANT: FUCK YOU OCTOPRESS - notbenh yaks about stuff on the internet</title>
+  <meta name="author" content="notbenh (aka ben hengst)">
+
+  
+  <meta name="description" content="WTF: Why do developers of software hate there users so much that they activly decide to make the simple and expected things hard when they should be &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="notbenh yaks about stuff on the internet" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">notbenh yaks about stuff on the internet</a></h1>
+  
+    <h2>== stuff ==</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:notbenh.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">RANT: FUCK YOU OCTOPRESS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-15T18:46:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>WTF: Why do developers of software hate there users so much that they activly decide to make the simple and expected things hard when they should be easy! For example user.github.com gh-pages expect to deploy to master, and I&#8217;m sure that just about every other self hosted thing will expect that master is the production branch&#8230; So it seems that Octopress, the blogging package for &#8220;Hackers&#8221; would follow suit? ~GASP~ they don&#8217;t, they have this sources branch, THAT THEY DON&#8217;T CREATE FOR YOU, that you have to read thru the Rakefile to even figure out WTF is going on?!?</p>
+
+<p>So thanks to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> that got sorted by renaming master to source and then the rake magic seems to build master under the hood. I don&#8217;t even understand why this was a good idea, other then master now only has the generated code and not everything else. If the point was to &#8220;hide passwords&#8221; then you can simply just add the config files to the ignore file. Unless I&#8217;m completely miss the obvious it seems like we are inventing a new workflow just for the fun of it.</p>
+
+<p>With the core of things up and apparently running&#8230; we now get to creat a post:</p>
+
+<pre><code>&gt; rake new\_post["silly name for a post"] 
+Creating new post: source/_posts/2012-03-15-silly-name-for-post.markdown
+</code></pre>
+
+<p>~sigh~ really last time I checked most unix tools only complain on error, so building a script that&#8217;s telling me that it&#8217;s going to think about something is completely pointless. Further more what my expectation was is that I wanted to create a new post, with your blog softwarez, as in I want to type&#8230; thus why are you now expecting me to COPY that file name and then tell vim (currently set as $EDITOR bu the way) to fucking edit that file. I&#8217;m guessing that it would be all of what 1 possibly 2 lines to make that a system call in the rake file. So again why not make this simple for the user? Oh that&#8217;s right this is a tool kit for hackers so we expect that all the users of this toolkit have the ablilty to solve this problem for us so we don&#8217;t need to care about them. =(</p>
+
+<p>Problems are designed for fixing, so lets first take care of that <strong>HORRABLE</strong> fuck rake and it&#8217;s silly pass me prams like nothing else. As a perl dev let&#8217;s make this simple by making a &#8217;<a href="https://github.com/notbenh/notbenh.github.com/blob/source/new">new</a>&#8217; script. Now all I have to say is :</p>
+
+<pre><code>&gt; new post another silly post
+Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
+</code></pre>
+
+<p>That&#8217;s progress, so now can we tell rake to just do what I wanted and not tell me that it was able to create a file, OH LOOK, the rake file says that it wrote the file before it writes the file&#8230; FAIL. Lets <a href="https://github.com/notbenh/octopress/commit/61701815ed97d2509264f4d00b9d2536d4d70cde">fix that up</a>&#8230; so that&#8217;s done. Now lets have the Rakefile actually DO something usefull for me by having it kick start this file with my <a href="https://github.com/notbenh/octopress/commit/c5c1e3ff88451efafd7d37a35e97206935aeccb2">$EDITOR</a>.</p>
+
+<p>There&#8230; now I have a system that&#8217;s WAY more user freindly&#8230; and it only took what an hour&#8230; and I&#8217;m not a ruby dev. Thanks again to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> for talking me off the ledge and letting me know that most of this could be worse.</p>
+
+<p>&#8211; notbenh~</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">notbenh (aka ben hengst)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-15T18:46:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rant/'>rant</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/" data-via="notbenh" data-counturl="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/08/02/learns-you-a-version-control/" title="Next Post: learns you a version control?">learns you a version control? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version/">you are reading the lets all try this again version</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/02/learns-you-a-version-control/">learns you a version control?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/15/rant-fuck-you-octopress/">RANT: FUCK YOU OCTOPRESS</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/notbenh">@notbenh</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'notbenh',
+            count: 1,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("notbenh", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/notbenh" class="twitter-follow-button" data-show-count="false">Follow @notbenh</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - notbenh (aka ben hengst) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
