@@ -1,0 +1,15 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+die qx{perldoc $0} unless @ARGV >= 2;
+system sprintf q{bundle exec rake new_%s["%s"]}, shift @ARGV, join ' ', @ARGV;
+
+
+
+=head1 USEAGE
+
+  new post about something
+  new page about me
+
+=cut
