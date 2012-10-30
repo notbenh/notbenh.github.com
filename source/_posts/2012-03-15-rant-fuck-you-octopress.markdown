@@ -17,7 +17,7 @@ With the core of things up and apparently running... we now get to creat a post:
 
 ~sigh~ really last time I checked most unix tools only complain on error, so building a script that's telling me that it's going to think about something is completely pointless. Further more what my expectation was is that I wanted to create a new post, with your blog softwarez, as in I want to type... thus why are you now expecting me to COPY that file name and then tell vim (currently set as $EDITOR bu the way) to fucking edit that file. I'm guessing that it would be all of what 1 possibly 2 lines to make that a system call in the rake file. So again why not make this simple for the user? Oh that's right this is a tool kit for hackers so we expect that all the users of this toolkit have the ablilty to solve this problem for us so we don't need to care about them. =(
 
-Problems are designed for fixing, so lets first take care of that **HORRABLE** fuck rake and it's silly pass me prams like nothing else. As a perl dev let's make this simple by making a '[new](https://github.com/notbenh/notbenh.github.com/blob/bf7be3f9ed31be98ee9065e810360e304c9d3407/new)' script. Now all I have to say is : 
+Problems are designed for fixing, so lets first take care of that **HORRABLE** fuck rake and it's silly pass me prams like nothing else. As a perl dev let's make this simple by making a '[new](https://github.com/notbenh/notbenh.github.com/blob/source/new)' script. Now all I have to say is : 
 
     > new post another silly post
     Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
