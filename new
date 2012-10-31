@@ -3,8 +3,9 @@ use strict;
 use warnings;
 
 die qx{perldoc $0} unless @ARGV >= 2;
-system sprintf q{bundle exec rake new_%s["%s"]}, shift @ARGV, join ' ', @ARGV;
-
+my $cmd = sprintf q{bundle exec rake new_%s["%s"]}, shift @ARGV, join ' ', @ARGV;
+my ($file) = qx{$cmd} =~ m/Creating new post: (.*)/;
+exec $ENV{VISUAL} || $ENV{EDITOR}, $file if $file;
 
 
 =head1 USEAGE
