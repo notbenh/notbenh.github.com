@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: learning - notbenh yaks about stuff on the internet</title>
+  <title>how i use tdone to tdid todos - notbenh yaks about stuff on the internet</title>
   <meta name="author" content="notbenh (aka ben hengst)">
 
   
-  <meta name="description" content="Category: learning">
+  <meta name="description" content="I&#8217;ve recently gone on yet-another-get-my-life-in-order kick. I tend to get these once a year, I get all excited about making lists and stuff. I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://notbenh.github.comblog/categories/learning/">
+  <link rel="canonical" href="http://notbenh.github.com/blog/2012/10/30/how-i-use-tdone/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,36 +63,97 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Learning</h1>
+    
+      <h1 class="entry-title">How I Use Tdone to Tdid Todos</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-30T22:02:00-07:00" pubdate data-updated="true">Oct 30<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&#8217;ve recently gone on yet-another-get-my-life-in-order kick. I tend to get these once a year, I get all excited about making lists and stuff. I spend a bunch of time working out how to build a list. I get all meta, I start to get worked up over tools, I get infatuated. Then after some amount of time I come to the realization that this is way more work then is really needed for such a simple job. I stop trying at all and I still some how get stuff done.</p>
 
-  
-  <h2>2012</h2>
+<p>This time around I got mad and yet again starting building my self a todo list manager as everything I tried seemed like I was right back to my old tricks. I don&#8217;t want to end up having to manage my management tool. So I though about what was the absolute minimum that I wanted: an ordered list that was simple to edit and visible from anywhere. It had to be so simple that I will still use this in a week&#8230; so I built <a href='https://github.com/notbenh/tdone'>tdone</a>. Some 50 lines of slightly wordy perl that wraps around a file. It can add a line, it can remove a line, it can sort the lines and it can display the lines of the file&#8230; that&#8217;s it. This file is expected to be an env var, this way the user can manage it, not the code.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/08/02/learns-you-a-version-control/">learns you a version control?</a></h1>
-<time datetime="2012-08-02T22:54:00-07:00" pubdate><span class='month'>Aug</span> <span class='day'>02</span> <span class='year'>2012</span></time>
+<p>Because I wrote this for me, there is next to nothing when it comes to syntax: any number of leading +&#8217;s are seen as a marker of priority and are used to sort the lines of the file (more first, none last). This is the only &#8220;actionable&#8221; aspect of the line, everything else is just a trip for the color-coding. I have been leading a word with : to mark it as a tag, and @ as a location. This allows me to say something like :</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/learning/'>learning</a>, <a class='category' href='/blog/categories/programing/'>programing</a>, <a class='category' href='/blog/categories/version-control/'>version control</a></span>
-</footer>
+<p>  ++ :blog about :tdone @laptop</p>
 
+<p>The : and @ are here only for the visual punch, they are used as markers for coloring, tags are green, locations are bold but that is all they do.</p>
 
-</article>
+<p>So this is the foundation, just a file and some simple code. Now here&#8217;s the magic of the simple-tool mind set. This file sits in a folder that is watched by Dropbox, thus every machine that I sit behind will have access of this list. This includes my phone, so everything is covered for me but you can build this how ever you wanted to. Wanna have some history for your list, set up a simple <a href='https://github.com/guard/guard'>guard</a> script that commits all changes to some git repo and syncs&#8230; it&#8217;s simple. Hooks, notifications, just about anything is possible by hooking things with IFTTT or any of the event services.</p>
 
+<p>So this is my setup, let&#8217;s see how long I stick with it. If you think this is something you would find useful, feel free to grab the code and run with it. Want something different fork it and make it your own. Have fun and be productive!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">notbenh (aka ben hengst)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-30T22:02:00-07:00" pubdate data-updated="true">Oct 30<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://notbenh.github.com/blog/2012/10/30/how-i-use-tdone/" data-via="notbenh" data-counturl="http://notbenh.github.com/blog/2012/10/30/how-i-use-tdone/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/25/you-are-reading-the-lets-all-try-this-again-version/" title="Previous Post: you are reading the lets all try this again version">&laquo; you are reading the lets all try this again version</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -189,7 +250,10 @@
       var disqus_shortname = 'notbenh';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://notbenh.github.com/blog/2012/10/30/how-i-use-tdone/';
+        var disqus_url = 'http://notbenh.github.com/blog/2012/10/30/how-i-use-tdone/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
