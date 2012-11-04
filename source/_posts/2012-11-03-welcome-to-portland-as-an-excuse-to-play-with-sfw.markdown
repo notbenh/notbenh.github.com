@@ -1,0 +1,13 @@
+---
+layout: post
+title: "welcome to portland as an excuse to play with SFW"
+date: 2012-11-03 20:23
+comments: true
+categories: SFW
+---
+So like many in Portland I have been following [https://github.com/WardCunningham Ward's] adventure in to re-imagining what a wiki could be: [https://github.com/WardCunningham/Smallest-Federated-Wiki "Smallest Federated Wiki"]. As with any project it has warts, points that could be clarified, though all in all it's a need sandbox project. So much so that I started building out a [http://wiki.notbenh.info/view/welcome-visitors/view/new-to-portland "so you are new to portlandr"] page as a way to see what is possible. 
+
+The good news is that it has also added a few tdone's to the list: 
+
+   * fix the docs, currently there is no consistent documentation on to deeply this. There is a non-standard structure to the project. I am guessing that this is due to the experimental nature of things, though because of this you really do need to know what you are doing. I think that smoothing some wrinkles out and documenting this process further could help get more hands on the projects (if that is even a desirable goal?)
+   * In my opinion the wiki-ish syntax is a little weird. Currently, from all the examples and things that I got working you are using a subset of HTML as HTML except for links? All in all a fine design decision but again this lacks documentation. So I'll see what I can get done in that department. 
