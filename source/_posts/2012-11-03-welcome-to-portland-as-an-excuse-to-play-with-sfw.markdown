@@ -13,4 +13,4 @@ The good news is that it has also added a few tdone's to the list:
    * In my opinion the wiki-ish syntax is a little weird. Currently, from all the examples and things that I got working you are using a subset of HTML as HTML except for links? All in all a fine design decision but again this lacks documentation. So I'll see what I can get done in that department. 
    * How to really use this thing? From what little I had played with before hand, it is a great note taking tool... but what this acts like in the "real" world has yet to be seen by me. I have no ideas how to make this all go so I will need to monitor things to see how they change and to see if there is any back-channel notification when some one clones your content? We'll just have to see on this one. 
 
-
+So there we have it, I'm playing with new toys... wanna play along?
