@@ -5,7 +5,7 @@ date: 2012-11-03 20:23
 comments: true
 categories: SFW
 ---
-So like many in Portland I have been following [[https://github.com/WardCunningham "Ward's"]] adventure i``n to re-imagining what a wiki could be: [https://github.com/WardCunningham/Smallest-Federated-Wiki "Smallest Federated Wiki"]. As with any project it has warts, points that could be clarified, though all in all it's a need sandbox project. So much so that I started building out a [http://wiki.notbenh.info/view/welcome-visitors/view/new-to-portland "so you are new to portlandr"] page as a way to see what is possible. 
+So like many in Portland I have been following [Ward's](https://github.com/WardCunningham "Ward's github account") adventure in to re-imagining what a wiki could be: [Smallest Federated Wiki](https://github.com/WardCunningham/Smallest-Federated-Wiki "Smallest Federated Wiki on github"). As with any project it has warts, points that could be clarified, though all in all it's a need sandbox project. So much so that I started building out a ["so you are new to portland"](http://wiki.notbenh.info/view/welcome-visitors/view/new-to-portland "so you are new to portland") page as a way to see what is possible. 
 
 The good news is that it has also added a few tdone's to the list: 
 
