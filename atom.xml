@@ -4,7 +4,7 @@
   <title><![CDATA[notbenh yaks about stuff on the internet]]></title>
   <link href="http://notbenh.github.com/atom.xml" rel="self"/>
   <link href="http://notbenh.github.com/"/>
-  <updated>2012-10-30T22:58:04-07:00</updated>
+  <updated>2013-03-25T16:28:23-07:00</updated>
   <id>http://notbenh.github.com/</id>
   <author>
     <name><![CDATA[notbenh (aka ben hengst)]]></name>
@@ -58,7 +58,7 @@
 
 <p>Now that I have started to build a system I have the ability to save my history. No longer do I have to worry about closing my paper and losing the undo history; it&#8217;s all saved elsewhere. I have a way to know what version came before and what came after. I can look back and see how my paper grew as I worked on it. All of these things are now possible because I have access to the history. And really that is all a version control system is: a way to access the history these files. It allows for all sorts of interesting things to all of a sudden become possible because you no longer have to focus on making everything perfect. Having version control is a net that allows you to safely experiment and always have a safe place to land if things go badly.</p>
 
-<blockquote><p>Lets take this story a bit further. Let&#8217;s say that I really didn&#8217;t do my research and I soon realize that my entire premiss is wrong. The good news is that I only have to edit a few paragraphs but they are all over the place and it could get really messy. I have some really good stuff in here and I want to make sure that I can look back at this version, but how am I going to remember that this is the version of my paper right before I changed direction? <strong>Ohh!</strong> I can save a copy of my paper and call it paper_wrong_premiss.txt and that way I can refer back to it at some later point.</p></blockquote>
+<blockquote><p>Lets take this story a bit further. Let&#8217;s say that I really didn&#8217;t do my research and I soon realize that my entire premise is wrong. The good news is that I only have to edit a few paragraphs but they are all over the place and it could get really messy. I have some really good stuff in here and I want to make sure that I can look back at this version, but how am I going to remember that this is the version of my paper right before I changed direction? <strong>Ohh!</strong> I can save a copy of my paper and call it paper_wrong_premise.txt and that way I can refer back to it at some later point.</p></blockquote>
 
 <p>Again, this is a version control concept, it is often called a &#8216;tag&#8217;. All we&#8217;ve really done is create a version, though this time we gave it a descriptive name rather then a forgettable number. Now as a human I no longer need to remember was it paper_26.txt or paper_29.txt that I made the change.</p>
 
