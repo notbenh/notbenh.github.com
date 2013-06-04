@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>RANT: FUCK YOU OCTOPRESS - notbenh yaks about stuff on the internet</title>
+  <title>tracking time should not be hard - notbenh yaks about stuff on the internet</title>
   <meta name="author" content="notbenh (aka ben hengst)">
 
   
-  <meta name="description" content="WTF: Why do developers of software hate there users so much that they activly decide to make the simple and expected things hard when they should be &hellip;">
+  <meta name="description" content="I go thru bouts of trying really hard to be organized. I am going thru another
+such event and have decided to dust off my old time tracking script. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/">
+  <link rel="canonical" href="http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">RANT: FUCK YOU OCTOPRESS</h1>
+      <h1 class="entry-title">Tracking Time Should Not Be Hard</h1>
     
     
       <p class="meta">
@@ -83,36 +84,62 @@
   
 
 
-<time datetime="2012-03-15T18:46:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2012</time>
+<time datetime="2013-06-03T16:06:00-07:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>WTF: Why do developers of software hate there users so much that they activly decide to make the simple and expected things hard when they should be easy! For example user.github.com gh-pages expect to deploy to master, and I&#8217;m sure that just about every other self hosted thing will expect that master is the production branch&#8230; So it seems that Octopress, the blogging package for &#8220;Hackers&#8221; would follow suit? ~GASP~ they don&#8217;t, they have this sources branch, THAT THEY DON&#8217;T CREATE FOR YOU, that you have to read thru the Rakefile to even figure out WTF is going on?!?</p>
+<div class="entry-content"><p>I go thru bouts of trying really hard to be organized. I am going thru another
+such event and have decided to dust off my old time tracking script. It
+effectively is a journal of context changes that are stored in such a way that
+timing can be inferred from. I still like the concept but the interface was
+overly complex and the reporting was not able to deal well with anything more
+then a single day.</p>
 
-<p>So thanks to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> that got sorted by renaming master to source and then the rake magic seems to build master under the hood. I don&#8217;t even understand why this was a good idea, other then master now only has the generated code and not everything else. If the point was to &#8220;hide passwords&#8221; then you can simply just add the config files to the ignore file. Unless I&#8217;m completely miss the obvious it seems like we are inventing a new workflow just for the fun of it.</p>
+<p>Thus time to open up the hood and get to hacking. I&#8217;ll save the details for
+another post if I really want to go down that rabbit hole, instead I would
+rather focus on usage.</p>
 
-<p>With the core of things up and apparently running&#8230; we now get to creat a post:</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  time.pl personal:blog write about time tracking</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>&gt; rake new\_post["silly name for a post"] 
-Creating new post: source/_posts/2012-03-15-silly-name-for-post.markdown
-</code></pre>
 
-<p>~sigh~ really last time I checked most unix tools only complain on error, so building a script that&#8217;s telling me that it&#8217;s going to think about something is completely pointless. Further more what my expectation was is that I wanted to create a new post, with your blog softwarez, as in I want to type&#8230; thus why are you now expecting me to COPY that file name and then tell vim (currently set as $EDITOR bu the way) to fucking edit that file. I&#8217;m guessing that it would be all of what 1 possibly 2 lines to make that a system call in the rake file. So again why not make this simple for the user? Oh that&#8217;s right this is a tool kit for hackers so we expect that all the users of this toolkit have the ablilty to solve this problem for us so we don&#8217;t need to care about them. =(</p>
+<p>So the key here is that the first &#8216;word&#8217; is expected to be the project. Any
+use of : is to denote a sub project, in this case I am working on this very
+blog post. Like I said: simple.</p>
 
-<p>Problems are designed for fixing, so lets first take care of that <strong>HORRABLE</strong> fuck rake and it&#8217;s silly pass me prams like nothing else. As a perl dev let&#8217;s make this simple by making a &#8217;<a href="https://github.com/notbenh/notbenh.github.com/blob/source/new">new</a>&#8217; script. Now all I have to say is :</p>
+<p>So that&#8217;s great, <em>slow clap</em> it&#8217;s simple but how is this time tracking?
+Great observation, the secret sauce is that what time.pl is doing here is it
+is taking note of the time and then adding both a timestamp and every thing to
+a single log file:</p>
 
-<pre><code>&gt; new post another silly post
-Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  [Mon Jun 3 18:02:35 PDT 2013] personal:blog write about time tracking</span></code></pre></td></tr></table></div></figure>
 
-<p>That&#8217;s progress, so now can we tell rake to just do what I wanted and not tell me that it was able to create a file, OH LOOK, the rake file says that it wrote the file before it writes the file&#8230; FAIL. Lets <a href="https://github.com/notbenh/octopress/commit/61701815ed97d2509264f4d00b9d2536d4d70cde">fix that up</a>&#8230; so that&#8217;s done. Now lets have the Rakefile actually DO something usefull for me by having it kick start this file with my <a href="https://github.com/notbenh/octopress/commit/c5c1e3ff88451efafd7d37a35e97206935aeccb2">$EDITOR</a>.</p>
 
-<p>There&#8230; now I have a system that&#8217;s WAY more user freindly&#8230; and it only took what an hour&#8230; and I&#8217;m not a ruby dev. Thanks again to <a href="https://twitter.com/#!/jhelwig">@jhelwig</a> for talking me off the ledge and letting me know that most of this could be worse.</p>
+<p>So now I am writing the post, but when I am done I am going to then have some
+dinner. Thus when I change context, I just make a note of it.</p>
 
-<p>&#8211; notbenh~</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  time.pl off dinner</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Because each entry is stamped, we can code a report that will do the diff for
+each entry and the &#8216;next&#8217; and infer the amount of time that was spent on it.
+In effect just track your context changes, and let the robot do the work for
+you. EXACTLY!</p>
+
+<p>As a bonus, to make all of this possible you end up with a journal of
+everything you did in the day. For me I use this as habit tracking. Do I
+really spend that much time on email? Wow, I spent over an hour on coffee
+breaks today. Congrats, you spent more then 2 hours on personal projects!</p>
+
+<p>All of this is possible by noticing when you change context and making a
+little note of it.</p>
+
+<p>If you wanna play along the code is all up on <a href="https://github.com/notbenh/TimeTrax">github</a> feel free to play along.</p>
 </div>
 
 
@@ -135,12 +162,12 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
   
 
 
-<time datetime="2012-03-15T18:46:00-07:00" pubdate data-updated="true">Mar 15<span>th</span>, 2012</time>
+<time datetime="2013-06-03T16:06:00-07:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/rant/'>rant</a>
+    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/life-management/'>life management</a>, <a class='category' href='/blog/categories/time-tracking/'>time tracking</a>
   
 </span>
 
@@ -149,7 +176,7 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/" data-via="notbenh" data-counturl="http://notbenh.github.com/blog/2012/03/15/rant-fuck-you-octopress/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard/" data-via="notbenh" data-counturl="http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard/" >Tweet</a>
   
   
   
@@ -158,12 +185,18 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/10/30/how-i-use-tdone/" title="Previous Post: how i use tdone to tdid todos">&laquo; how i use tdone to tdid todos</a>
       
-        <a class="basic-alignment right" href="/blog/2012/08/02/learns-you-a-version-control/" title="Next Post: learns you a version control?">learns you a version control? &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -259,6 +292,22 @@ Creating new post: source/_posts/2012-03-15-another-silly-post.markdown
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'notbenh';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard/';
+        var disqus_url = 'http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

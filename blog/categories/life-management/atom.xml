@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: life management | notbenh yaks about stuff on the internet]]></title>
+  <link href="http://notbenh.github.com/blog/categories/life-management/atom.xml" rel="self"/>
+  <link href="http://notbenh.github.com/"/>
+  <updated>2013-06-03T21:30:04-07:00</updated>
+  <id>http://notbenh.github.com/</id>
+  <author>
+    <name><![CDATA[notbenh (aka ben hengst)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[tracking time should not be hard]]></title>
+    <link href="http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard/"/>
+    <updated>2013-06-03T16:06:00-07:00</updated>
+    <id>http://notbenh.github.com/blog/2013/06/03/tracking-time-should-not-be-hard</id>
+    <content type="html"><![CDATA[<p>I go thru bouts of trying really hard to be organized. I am going thru another
+such event and have decided to dust off my old time tracking script. It
+effectively is a journal of context changes that are stored in such a way that
+timing can be inferred from. I still like the concept but the interface was
+overly complex and the reporting was not able to deal well with anything more
+then a single day.</p>
+
+<p>Thus time to open up the hood and get to hacking. I'll save the details for
+another post if I really want to go down that rabbit hole, instead I would
+rather focus on usage.</p>
+
+<p><code>
+  time.pl personal:blog write about time tracking
+</code></p>
+
+<p>So the key here is that the first 'word' is expected to be the project. Any
+use of : is to denote a sub project, in this case I am working on this very
+blog post. Like I said: simple.</p>
+
+<p>So that's great, <em>slow clap</em> it's simple but how is this time tracking?
+Great observation, the secret sauce is that what time.pl is doing here is it
+is taking note of the time and then adding both a timestamp and every thing to
+a single log file:</p>
+
+<p><code>
+  [Mon Jun 3 18:02:35 PDT 2013] personal:blog write about time tracking
+</code></p>
+
+<p>So now I am writing the post, but when I am done I am going to then have some
+dinner. Thus when I change context, I just make a note of it.</p>
+
+<p><code>
+  time.pl off dinner
+</code></p>
+
+<p>Because each entry is stamped, we can code a report that will do the diff for
+each entry and the 'next' and infer the amount of time that was spent on it.
+In effect just track your context changes, and let the robot do the work for
+you. EXACTLY!</p>
+
+<p>As a bonus, to make all of this possible you end up with a journal of
+everything you did in the day. For me I use this as habit tracking. Do I
+really spend that much time on email? Wow, I spent over an hour on coffee
+breaks today. Congrats, you spent more then 2 hours on personal projects!</p>
+
+<p>All of this is possible by noticing when you change context and making a
+little note of it.</p>
+
+<p>If you wanna play along the code is all up on <a href="https://github.com/notbenh/TimeTrax">github</a> feel free to play along.</p>
+]]></content>
+  </entry>
+  
+</feed>
