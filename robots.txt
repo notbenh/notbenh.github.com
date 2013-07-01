@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://notbenh.github.com/sitemap.xml 
