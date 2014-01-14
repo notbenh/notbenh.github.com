@@ -31,8 +31,14 @@
         <lastmod>2013-12-11T23:11:54-08:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://notbenh.github.com/blog/2014/01/13/generally-people-are-just-mean-to-eachother/
+        </loc>
+        <lastmod>2014-01-13T20:37:05-08:00</lastmod>
+    </url>
+    <url>
         <loc>http://notbenh.github.com/blog/archives/</loc>
-        <lastmod>2013-12-11T23:11:54-08:00</lastmod>
+        <lastmod>2014-01-13T20:37:05-08:00</lastmod>
     </url>
     <url>
         <loc>http://notbenh.github.com/robots.txt</loc>
@@ -40,6 +46,6 @@
     </url>
     <url>
         <loc>http://notbenh.github.com/</loc>
-        <lastmod>2013-12-11T23:11:54-08:00</lastmod>
+        <lastmod>2014-01-13T20:37:05-08:00</lastmod>
     </url>
 </urlset>
